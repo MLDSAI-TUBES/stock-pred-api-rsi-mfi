@@ -23,8 +23,8 @@ def predict_next_day(company):
     # Inverse predicted
     close_scaler = load(f'../experiments_robust/feature_engineering/{company}_close_scaler.bin')
     inversed = close_scaler.inverse_transform(np.array(prediction).reshape(-1,1))
-
-    return inversed.tolist()[0]
+    return_val = {'data': str(inversed.tolist()[0][0])}
+    return return_val
 
 if __name__ == '__main__':
     app.run(debug=True)
