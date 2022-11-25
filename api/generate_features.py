@@ -9,15 +9,17 @@ class FeatureGenerator():
     def __init__(self, ticker):
         self.ticker = ticker
         self.date = datetime.date.today()
-        self.historical_data = self.download_historical_data()
+        self.historical_data = self.download_historical_data()[0]
         self.TAs = self.get_TAs_for_all_windows()
         self.date_to_be_predicted = self.date
         self.date_related_features = self.gen_date_features()
         self.scaled_features = self.scale_features()
+        self.current_close = self.download_historical_data()[1]
 
     def download_historical_data(self):
         df = yf.download(self.ticker, period='1mo')
-        return df
+        current_close = df['Close'][-1]
+        return df, current_close
     
     def get_TAs(self, windowSize):
         """
