@@ -78,7 +78,7 @@ class FeatureGenerator():
     
     def scale_features(self):
         ticker = self.ticker[:4].lower()
-        features_scaler = load(f'../experiments_robust/feature_engineering/{ticker}_features_scaler.bin')
+        features_scaler = load(f'../experiments_final/feature_engineering/{ticker}_features_scaler.bin')
         TA_features = self.TAs
         date_features = self.date_related_features
         data = {
