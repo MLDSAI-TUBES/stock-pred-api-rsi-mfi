@@ -60,8 +60,11 @@ class FeatureGenerator():
         """
         one_day = datetime.timedelta(days=1)
         next_day = self.date + one_day
-        while next_day in holidays.WEEKEND:
+        next_day_num = next_day.weekday()
+        while next_day_num >= 5:
+            print('WEEKEND')
             next_day += one_day
+            next_day_num = next_day.weekday()
 
         self.date_to_be_predicted = next_day
 
