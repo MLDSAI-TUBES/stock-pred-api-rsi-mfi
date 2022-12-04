@@ -1,6 +1,6 @@
 # Experiment (Exp#1.2)
 Subfolder: /experiments/
-Repository for experiment exp#1.1 with the following configuration:
+Repository for experiment exp#1.2 with the following configuration:
 - Scaler: StandardScaler
 - Feature Set: Feature Set #1 (Feats#1)
     - 7 DAYS MA
