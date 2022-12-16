@@ -10,4 +10,3 @@ TA_Lib==0.4.24
 tensorflow==2.10.0
 xgboost==1.7.0
 yfinance==0.1.81
-~atplotlib==3.6.1
